@@ -78,6 +78,7 @@ def read_from_stream(stream, desired_channel, timeout=10):
                 data.insert(0, accumulator)
                 accumulator = data.pop()
                 for line in data:
+                    print(line)
                     if len(line) > 1 and line[1] == ':':
                         channel, string = line.partition(':')[::2]
                         channels[int(channel)].append(string)
